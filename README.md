@@ -1,3 +1,27 @@
+
+# wolfssl-dtls
+
+./configure --enable-dtls --enable-dtls13
+make
+sudo make install
+
+cd examples/
+cd dtls/
+sudo make
+
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
+cd ..
+
+#Execute o cliente e servidor e terminais distintos (se você não adicionou definitivamente o /usr/local/lib em sua fonte de LIBs, será necessário rodar o comando 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/ novamente)
+
+./dtls/server-dtls
+
+./dtls/client-dtls
+
+
+===============================================================================
 # wolfSSL Embedded SSL/TLS Library
 
 The [wolfSSL embedded SSL library](https://www.wolfssl.com/products/wolfssl/)
