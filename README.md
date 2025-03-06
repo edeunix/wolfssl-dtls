@@ -1,26 +1,49 @@
 
-# wolfssl-dtls
+# wolfssl-dtls (tutorial Lab Redes)
 
+## Instala dependencias
+sudo apt install gcc make build-essential autoconf
+
+## git clone
+git clone https://github.com/edeunix/wolfssl-dtls.git
+
+## na pasta (wolfssl-dtls)
 ./configure --enable-dtls --enable-dtls13
+
 make
+
 sudo make install
 
+
+## execute o exemplo
 cd examples/
+
 cd dtls/
+
 sudo make
 
 
+## é preciso indicar no Sistema Operacional a Lib do WolfSSL. Uma forma de fazer é EM CADA TERMINAL ABERTO executar o comando
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
+
+
+## Volte a pasta de nível acima dos exemplos. Isso porque os certificados utilizados na comunicação estão em caminho relativo do exemplo de cliente e servidor em pasta neste nível
+
 cd ..
 
-#Execute o cliente e servidor e terminais distintos (se você não adicionou definitivamente o /usr/local/lib em sua fonte de LIBs, será necessário rodar o comando 
+## Execute o cliente e servidor e terminais distintos 
+### (Lembre-se: se você não adicionou definitivamente o /usr/local/lib em sua fonte de LIBs, será necessário rodar o comando 
+
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/ novamente)
 
+
+# servidor
 ./dtls/server-dtls
 
+# cliente
 ./dtls/client-dtls
 
-
+## lembre-se de escutar com o WireShark o 127.0.0.1 (loopback, localhost)
 ===============================================================================
 # wolfSSL Embedded SSL/TLS Library
 
