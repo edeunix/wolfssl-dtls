@@ -15,6 +15,10 @@ make
 sudo make install
 
 
+## é preciso indicar no Sistema Operacional a Lib do WolfSSL. Uma forma de fazer é EM CADA TERMINAL ABERTO executar o comando
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
+
+
 ## execute o exemplo
 cd examples/
 
@@ -23,18 +27,12 @@ cd dtls/
 sudo make
 
 
-## é preciso indicar no Sistema Operacional a Lib do WolfSSL. Uma forma de fazer é EM CADA TERMINAL ABERTO executar o comando
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
-
-
 ## Volte a pasta de nível acima dos exemplos. Isso porque os certificados utilizados na comunicação estão em caminho relativo do exemplo de cliente e servidor em pasta neste nível
 
 cd ..
 
 ## Execute o cliente e servidor e terminais distintos 
-### (Lembre-se: se você não adicionou definitivamente o /usr/local/lib em sua fonte de LIBs, será necessário rodar o comando 
-
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/ novamente)
+### (Lembre-se: se você não adicionou definitivamente o /usr/local/lib em sua fonte de LIBs, será necessário rodar o comando export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/ novamente)
 
 
 # servidor
